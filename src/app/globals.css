@@ -64,6 +64,36 @@ body {
   font-family: var(--font-sans);
 }
 
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes header-fade-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ambient-drift {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(10px, -8px) scale(1.03); }
+}
+
+@keyframes reveal-sweep {
+  from { clip-path: inset(0 100% 0 0); -webkit-clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0% 0 0); -webkit-clip-path: inset(0 0% 0 0); }
+}
+
 @layer utilities {
   .text-hero-display {
     font-family: var(--font-display);
@@ -110,13 +140,13 @@ body {
     font-family: var(--font-sans);
     font-size: clamp(1rem, 1.125vw, 1.125rem);
     font-weight: 400;
-    line-height: 1.4;
+    line-height: 1.5;
   }
   .text-body {
     font-family: var(--font-sans);
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.6;
   }
   .text-button {
     font-family: var(--font-sans);
@@ -143,5 +173,13 @@ body {
     line-height: 1.4;
     letter-spacing: 0.28px;
     text-transform: uppercase;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
