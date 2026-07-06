@@ -53,6 +53,9 @@ export default function Footer() {
     <footer ref={ref} className="bg-[#17171c] text-white relative">
       <VisCtx.Provider value={show}>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="mb-12">
+            <img src="/logo-1.webp" alt="Multiconsult" className="h-10 w-auto opacity-80" />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             <FooterColumn index={0}>
               <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-6">Contact</h3>

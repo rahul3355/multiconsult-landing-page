@@ -23,6 +23,8 @@
   --form-focus: #9b60aa;
   --coral: #ff7759;
   --coral-soft: #ffad9b;
+  --orange: #e85d2c;
+  --orange-light: #fdf1ec;
   --error: #b30000;
   --on-primary: #ffffff;
   --on-dark: #ffffff;
@@ -51,6 +53,8 @@
   --color-form-focus: var(--form-focus);
   --color-coral: var(--coral);
   --color-coral-soft: var(--coral-soft);
+  --color-orange: var(--orange);
+  --color-orange-light: var(--orange-light);
   --color-error: var(--error);
   --color-on-primary: var(--on-primary);
   --color-on-dark: var(--on-dark);
@@ -65,7 +69,7 @@ body {
 }
 
 @keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(12px); }
+  from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -92,6 +96,16 @@ body {
 @keyframes reveal-sweep {
   from { clip-path: inset(0 100% 0 0); -webkit-clip-path: inset(0 100% 0 0); }
   to { clip-path: inset(0 0% 0 0); -webkit-clip-path: inset(0 0% 0 0); }
+}
+
+@keyframes video-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @layer utilities {

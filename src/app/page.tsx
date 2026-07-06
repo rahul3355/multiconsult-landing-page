@@ -1,110 +1,85 @@
 import Link from "next/link";
 import { AnimatedSection, AnimatedChild } from "@/components/AnimatedSection";
 
-const services = [
-  { title: "Buildings & Property", description: "Comprehensive engineering and architectural design for commercial, residential, and public buildings across all project phases.", href: "/services", icon: "buildings" },
-  { title: "Mobility & Transport", description: "Integrated transport planning, road and rail design, bridge engineering, and sustainable mobility solutions.", href: "/services", icon: "mobility" },
-  { title: "Energy & Industry", description: "Hydropower, renewable energy, offshore engineering, and industrial process solutions from concept through commissioning.", href: "/services", icon: "energy" },
-  { title: "Water & Environment", description: "Water supply, wastewater treatment, flood risk management, and comprehensive environmental assessments.", href: "/services", icon: "water" },
-  { title: "Ground Investigations", description: "Geotechnical engineering, site investigations, and ground condition analysis for projects worldwide.", href: "/services", icon: "ground" },
+const stats = [
+  { number: "3900+", label: "Employees" },
+  { number: "80+", label: "Offices" },
+  { number: "45+", label: "Countries" },
+  { number: "1908", label: "Founded" },
 ];
 
-const stats = [
-  { number: "3900+", label: "Employees" }, { number: "80+", label: "Offices" }, { number: "45+", label: "Countries" }, { number: "1908", label: "Founded" },
+const services = [
+  {
+    title: "Energy & Industry",
+    description: "Hydropower, renewable energy, offshore engineering, and industrial solutions from concept through commissioning.",
+    href: "/services",
+  },
+  {
+    title: "Transport & Mobility",
+    description: "Integrated transport planning, road and rail design, bridge engineering, and sustainable mobility solutions.",
+    href: "/services",
+  },
+  {
+    title: "Buildings & Environment",
+    description: "Architecture, structural engineering, water supply, and environmental assessments for the built environment.",
+    href: "/services",
+  },
+];
+
+const trustLogos = [
+  { name: "Statkraft", initials: "S", label: "Statkraft" },
+  { name: "Equinor", initials: "E", label: "Equinor" },
+  { name: "Bane NOR", initials: "BN", label: "Bane NOR" },
+  { name: "Nye Veier", initials: "NV", label: "Nye Veier" },
+  { name: "Oslo Kommune", initials: "OK", label: "Oslo Kommune" },
+  { name: "Jernbaneverket", initials: "JBV", label: "Jernbaneverket" },
 ];
 
 const timeline = [
-  { year: "1908", title: "The story begins", description: "Norsk Vandbygningskontor established", image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=128&q=80" },
-  { year: "1974", title: "Multiconsult name introduced", description: "The company takes on the name Multiconsult", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=128&q=80" },
-  { year: "1997", title: "Multidisciplinary profile", description: "Expanding capabilities across engineering disciplines", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=128&q=80" },
-  { year: "2003", title: "International expansion", description: "Projects span across Europe, Africa, and Asia", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=128&q=80" },
-  { year: "2015", title: "Acquires LINK Arkitektur", description: "Listed on Oslo Stock Exchange", image: "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=128&q=80" },
-  { year: "2010–2020", title: "Scandinavian expansion", description: "Offices in Sweden, Denmark, Poland, UK", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=128&q=80" },
+  { year: "1908", title: "The story begins", description: "Norsk Vandbygningskontor established" },
+  { year: "1974", title: "Multiconsult name", description: "The company takes on the name Multiconsult" },
+  { year: "1997", title: "Multidisciplinary", description: "Expanding across engineering disciplines" },
+  { year: "2003", title: "International", description: "Projects span Europe, Africa, and Asia" },
+  { year: "2015", title: "Oslo Børs", description: "Listed on the Oslo Stock Exchange" },
+  { year: "2020+", title: "Scandinavian growth", description: "Offices in Sweden, Denmark, Poland, UK" },
 ];
 
 const brands = [
-  { name: "Multiconsult", tag: "Engineering", description: "Specialist engineering consultancy delivering multidisciplinary solutions across buildings, transport, energy, water, and ground engineering worldwide.", href: "https://www.multiconsultgroup.com", image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&q=80" },
-  { name: "A-lab", tag: "Architecture", description: "Oslo-based architecture studio creating innovative and sustainable architectural designs for urban development.", href: "https://www.a-lab.no", image: "https://images.unsplash.com/photo-1486718448742-163732cd1544?w=600&q=80" },
-  { name: "LINK Arkitektur", tag: "Architecture", description: "One of Scandinavia's leading architecture practices, shaping sustainable environments for people and communities.", href: "https://www.linkarkitektur.com", image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" },
-  { name: "Sitepartner", tag: "Site Development", description: "Specialist in site development, infrastructure and land development projects across Norway.", href: "https://www.sitepartner.no", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80" },
-  { name: "Iterio", tag: "Urban Planning", description: "Urban planning and traffic engineering consultancy creating sustainable mobility and city development solutions.", href: "https://www.iterio.se", image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&q=80" },
+  { name: "Multiconsult", tag: "Engineering", description: "Specialist engineering consultancy delivering multidisciplinary solutions worldwide.", href: "https://www.multiconsultgroup.com" },
+  { name: "A-lab", tag: "Architecture", description: "Oslo-based architecture studio creating innovative and sustainable designs.", href: "https://www.a-lab.no" },
+  { name: "LINK Arkitektur", tag: "Architecture", description: "One of Scandinavia's leading architecture practices.", href: "https://www.linkarkitektur.com" },
+  { name: "Sitepartner", tag: "Site Development", description: "Specialist in site development and infrastructure projects across Norway.", href: "https://www.sitepartner.no" },
+  { name: "Iterio", tag: "Urban Planning", description: "Urban planning and traffic engineering for sustainable mobility.", href: "https://www.iterio.se" },
 ];
 
-const quotes = [
-  { text: "We are enablers - we turn ambitious goals into reality.", image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80" },
-  { text: "Since 1908, we have tackled big and complex challenges.", image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" },
-  { text: "Our work has always served the greater good.", image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&q=80" },
-  { text: "Together, as engineers, architects and everyone!", image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80" },
-];
-
-const trustLogos = ["Statkraft", "Equinor", "Bane NOR", "Nye Veier", "Oslo Kommune", "Jernbaneverket"];
-
-function ServiceIcon({ icon }: { icon: string }) {
-  switch (icon) {
-    case "buildings": return <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="12" width="8" height="16"/><rect x="14" y="4" width="8" height="24"/><rect x="24" y="8" width="4" height="20"/><line x1="4" y1="28" x2="28" y2="28"/></svg>;
-    case "mobility": return <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="8" cy="24" r="3"/><circle cx="24" cy="24" r="3"/><path d="M5 24H3V12l4-4h10l4 4v12h-2"/><path d="M17 12h4l3 4v4"/><line x1="3" y1="16" x2="17" y2="16"/></svg>;
-    case "energy": return <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2L8 18h8l-2 12 10-16h-8l2-12z"/></svg>;
-    case "water": return <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4c0 0-8 8-8 14a8 8 0 0016 0c0-6-8-14-8-14z"/><path d="M12 18a4 4 0 008 0" strokeWidth="1"/></svg>;
-    case "ground": return <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 24l8-16 6 10 6-8 4 14"/><line x1="4" y1="28" x2="28" y2="28"/></svg>;
-    default: return null;
-  }
-}
-
-export default function Home() {
+function LogoMark({ name, initials, label }: { name: string; initials: string; label: string }) {
   return (
-    <>
-      <AnnouncementBar />
-      <Hero />
-      <AnimatedSection><AboutBlock /></AnimatedSection>
-      <AnimatedSection><ServicesOverview /></AnimatedSection>
-      <AnimatedSection><StatsSection /></AnimatedSection>
-      <AnimatedSection><TrustLogoStrip /></AnimatedSection>
-      <AnimatedSection><HistoryTimeline /></AnimatedSection>
-      <AnimatedSection><BrandsSection /></AnimatedSection>
-      <AnimatedSection><ThinkBeyondSection /></AnimatedSection>
-      <AnimatedSection><InvestorRelations /></AnimatedSection>
-      <AnimatedSection><ClosingCta /></AnimatedSection>
-    </>
-  );
-}
-
-const ANIM = 'fade-in-up 100ms cubic-bezier(0.16, 1, 0.3, 1) both';
-
-function AnnouncementBar() {
-  return (
-    <div className="bg-cohere-black text-white">
-      <div className="mx-auto flex max-w-7xl items-center justify-center px-6 py-[9px]">
-        <p className="text-micro text-white/80">Multiconsult ASA is listed on the Oslo Stock Exchange under ticker MULTI.</p>
-      </div>
-    </div>
+    <svg viewBox={`0 0 ${Math.max(130, label.length * 14)} 44`} fill="none" className="h-11 w-auto opacity-45 hover:opacity-70 transition-opacity duration-300">
+      <rect x="0" y="4" width="36" height="36" rx="8" fill="#17171c" />
+      <text x="18" y="28" textAnchor="middle" fill="white" fontSize={initials.length > 1 ? 13 : 17} fontWeight="600" fontFamily="Inter, sans-serif">{initials}</text>
+      <text x="46" y="28" fill="#17171c" fontSize="15" fontWeight="500" fontFamily="Inter, sans-serif" letterSpacing="-0.3">{label}</text>
+    </svg>
   );
 }
 
 function Hero() {
   return (
-    <section className="bg-canvas relative overflow-hidden">
-      <div className="relative mx-auto grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-        <div className="flex items-center px-6 py-24 sm:py-32 lg:px-16">
-          <div className="max-w-lg">
-            <p className="text-mono-label text-muted mb-6" style={{ animation: `${ANIM} 100ms` }}>Multiconsult Group</p>
-            <h1 className="text-hero-display text-primary" style={{ animation: `${ANIM} 200ms` }}>Think Beyond.</h1>
-            <p className="mt-8 text-body-large text-body-muted" style={{ animation: `${ANIM} 300ms` }}>We are Multiconsult - a specialist engineering and architecture consultancy. Since 1908.</p>
-            <div className="mt-12 flex flex-col items-start gap-4 sm:flex-row" style={{ animation: `${ANIM} 400ms` }}>
-              <Link href="/services" className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-button text-white transition-all duration-75 hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-primary/50 outline-none">
-                Explore Our Services
-              </Link>
-              <Link href="/projects" className="inline-flex items-center rounded-full border border-ink/20 px-6 py-3 text-button text-body-muted transition-all duration-75 hover:border-ink/40 hover:text-ink focus-visible:ring-2 focus-visible:ring-primary/50 outline-none">
-                Our Projects
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="relative flex items-center px-6 py-24 sm:py-32 lg:px-0 lg:pr-16">
-          <div className="relative w-full overflow-hidden rounded-2xl shadow-xl" style={{ animation: `scale-in 100ms ease-out 300ms both` }}>
-            <div className="absolute inset-0 bg-black/10 z-10" />
-            <video autoPlay muted loop playsInline className="h-full w-full object-cover" poster="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=80">
-              <source src="/videos/hydroelectric-aerial.mp4" type="video/mp4" />
-            </video>
+    <section className="relative h-screen min-h-[600px] max-h-[900px] flex items-center overflow-hidden bg-canvas">
+      <div className="absolute inset-0">
+        <video autoPlay muted loop playsInline className="h-full w-full object-cover"           poster="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1920&q=80" style={{ animation: 'video-zoom 20s ease-out 1s both' }}>
+          <source src="/videos/engineering-blueprints.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-white/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-white/80" />
+      </div>
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 w-full">
+        <div className="mx-auto max-w-2xl text-center">
+
+          <h1 className="text-hero-display text-primary tracking-tight" style={{ animation: 'fade-in-up 600ms cubic-bezier(0.16, 1, 0.3, 1) 250ms both' }}>Think Beyond.</h1>
+          <p className="mt-6 mx-auto max-w-lg text-body-large text-body-muted leading-relaxed" style={{ animation: 'fade-in-up 600ms cubic-bezier(0.16, 1, 0.3, 1) 400ms both' }}>Engineering & architecture for the built environment. Since 1908.</p>
+          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center" style={{ animation: 'fade-in-up 600ms cubic-bezier(0.16, 1, 0.3, 1) 550ms both' }}>
+            <Link href="/contact" className="inline-flex items-center rounded-full bg-orange px-7 py-3.5 text-button text-white transition-all duration-200 hover:bg-orange/90 hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-orange/50 outline-none shadow-sm">Get in touch</Link>
+            <Link href="/projects" className="inline-flex items-center border-b border-ink/30 pb-0.5 text-body text-body-muted transition-colors duration-200 hover:border-ink hover:text-ink focus-visible:ring-2 focus-visible:ring-orange/50 outline-none">View our projects</Link>
           </div>
         </div>
       </div>
@@ -112,47 +87,15 @@ function Hero() {
   );
 }
 
-function AboutBlock() {
+function TrustLogos() {
   return (
-    <section className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-      <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <AnimatedChild index={0}>
-          <p className="text-mono-label text-muted mb-4">About</p>
-          <h2 className="text-section-heading text-primary">A multidisciplinary approach</h2>
-          <p className="mt-6 text-body-large text-body-muted leading-relaxed">We build bridges between the past and the future, between heart and mind, people and communities, ideas and outcomes. As a specialist engineering and architecture consultancy with over 3,900 employees across 80+ offices, we bring together expertise from Multiconsult, LINK Arkitektur, A-lab, Iterio, and Sitepartner to enhance a truly multidisciplinary approach.</p>
-          <p className="mt-4 text-body-large text-body-muted leading-relaxed">From hydropower in the UK to urban development in Scandinavia, our work spans 45+ countries - always driven by the conviction that great engineering and architecture serve the greater good.</p>
-          <Link href="/about" className="mt-8 inline-flex items-center border-b border-ink/30 py-1 text-body text-ink transition-colors duration-75 hover:border-ink focus-visible:ring-2 focus-visible:ring-focus-blue outline-none">Learn more about us</Link>
-        </AnimatedChild>
-        <AnimatedChild index={1}>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
-            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80" alt="" className="h-full w-full object-cover transition-transform duration-200 hover:scale-105" loading="lazy" />
-          </div>
-        </AnimatedChild>
-      </div>
-    </section>
-  );
-}
-
-function ServicesOverview() {
-  return (
-    <section className="bg-white py-24 sm:py-32">
+    <section className="py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <AnimatedChild index={0}>
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="text-mono-label text-muted mb-4">What We Do</p>
-            <h2 className="text-section-heading text-primary">Our Services</h2>
-            <p className="mt-4 text-body-large text-body-muted">End-to-end expertise across the full project lifecycle</p>
-          </div>
-        </AnimatedChild>
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s, i) => (
-            <AnimatedChild key={s.title} index={i + 1}>
-              <div className="flex h-full flex-col rounded-sm bg-soft-stone p-8 transition-all duration-75 hover:bg-soft-stone/80 hover:-translate-y-0.5">
-                <div className="text-primary"><ServiceIcon icon={s.icon} /></div>
-                <h3 className="mt-4 text-card-heading text-primary">{s.title}</h3>
-                <p className="mt-3 flex-1 text-body text-body-muted">{s.description}</p>
-                <Link href={s.href} className="mt-4 inline-flex items-center border-b border-ink/30 py-0.5 text-button text-ink transition-colors duration-75 hover:border-ink focus-visible:ring-2 focus-visible:ring-focus-blue outline-none">Learn more</Link>
-              </div>
+        <AnimatedChild index={0}><p className="text-caption text-muted text-center mb-12">Trusted by leading Norwegian enterprises</p></AnimatedChild>
+        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-8">
+          {trustLogos.map((logo, i) => (
+            <AnimatedChild key={logo.name} index={i + 1}>
+              <LogoMark name={logo.name} initials={logo.initials} label={logo.label} />
             </AnimatedChild>
           ))}
         </div>
@@ -163,14 +106,14 @@ function ServicesOverview() {
 
 function StatsSection() {
   return (
-    <section className="border-t border-hairline py-24 sm:py-32">
+    <section className="bg-primary py-24 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+        <div className="mt-8 grid grid-cols-2 gap-12 sm:grid-cols-4 sm:gap-8">
           {stats.map((stat, i) => (
-            <AnimatedChild key={stat.label} index={i}>
+            <AnimatedChild key={stat.label} index={i + 1}>
               <div className="text-center">
-                <p className="text-product-display text-primary">{stat.number}</p>
-                <p className="text-mono-label text-muted mt-2">{stat.label}</p>
+                <p className="text-[clamp(2.5rem,5vw,4.5rem)] font-display font-[450] text-white leading-none tracking-tight">{stat.number}</p>
+                <p className="text-caption text-white/60 mt-3 font-medium">{stat.label}</p>
               </div>
             </AnimatedChild>
           ))}
@@ -180,15 +123,28 @@ function StatsSection() {
   );
 }
 
-function TrustLogoStrip() {
+function ServicesSection() {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <AnimatedChild index={0}><p className="text-caption text-muted text-center mb-10">Trusted by leading Norwegian enterprises</p></AnimatedChild>
-        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
-          {trustLogos.map((name, i) => (
-            <AnimatedChild key={name} index={i + 1}>
-              <span className="text-feature-heading text-muted/40 font-medium tracking-tight transition-colors duration-75 hover:text-muted/60">{name}</span>
+        <AnimatedChild index={0}>
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-section-heading text-primary">Our expertise</h2>
+            <p className="mt-4 text-body-large text-body-muted">End-to-end capability across the full project lifecycle</p>
+          </div>
+        </AnimatedChild>
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((s, i) => (
+            <AnimatedChild key={s.title} index={i + 1}>
+              <Link href={s.href} className="group flex h-full flex-col rounded-2xl border border-hairline/60 bg-white p-8 transition-all duration-200 hover:border-orange/30 hover:shadow-sm hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-orange/50 outline-none">
+                <div className="flex-1">
+                  <h3 className="text-card-heading text-primary group-hover:text-orange transition-colors duration-200">{s.title}</h3>
+                  <p className="mt-3 text-body text-body-muted leading-relaxed">{s.description}</p>
+                </div>
+                <span className="mt-6 inline-flex items-center gap-1.5 text-button text-orange transition-all duration-200 group-hover:gap-2.5">
+                  Learn more<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 4l4 4-4 4" /></svg>
+                </span>
+              </Link>
             </AnimatedChild>
           ))}
         </div>
@@ -197,36 +153,23 @@ function TrustLogoStrip() {
   );
 }
 
-function HistoryTimeline() {
+function AboutBlock() {
   return (
     <section className="bg-soft-stone py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <AnimatedChild index={0}>
-          <p className="text-mono-label text-muted mb-4">Our History</p>
-          <h2 className="text-section-display text-primary">Past</h2>
-        </AnimatedChild>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {timeline.map((item, i) => (
-            <AnimatedChild key={item.year} index={i + 1}>
-              <div className="h-full rounded-sm bg-white p-6 transition-all duration-75 hover:bg-white/80">
-                <div className="flex items-start gap-4">
-                  <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-xs">
-                    <img src={item.image} alt="" className="h-full w-full object-cover transition-transform duration-200 hover:scale-110" loading="lazy" />
-                  </div>
-                  <div>
-                    <p className="text-feature-heading text-primary">{item.year}</p>
-                    <p className="mt-0.5 font-medium text-ink">{item.title}</p>
-                    <p className="mt-1 text-caption text-muted">{item.description}</p>
-                  </div>
-                </div>
-              </div>
-            </AnimatedChild>
-          ))}
-        </div>
-        <AnimatedChild index={timeline.length + 1}>
-          <div className="mt-24">
-            <h2 className="text-section-display text-primary">Future</h2>
-            <p className="mt-6 max-w-2xl text-body-large text-body-muted leading-relaxed">The next chapter of Multiconsult is being written today. With a growing international presence, deeper integration across our subsidiaries, and an unwavering commitment to sustainable engineering and architecture, we continue to build the future - one project at a time.</p>
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <h2 className="text-section-heading text-primary">A multidisciplinary approach</h2>
+              <p className="mt-6 text-body-large text-body-muted leading-relaxed">We bring together expertise from Multiconsult, LINK Arkitektur, A-lab, Iterio, and Sitepartner to deliver integrated engineering and architecture solutions across the full project lifecycle.</p>
+              <p className="mt-4 text-body-large text-body-muted leading-relaxed">From hydropower in the UK to urban development in Scandinavia, our work spans 45+ countries - always driven by the conviction that great engineering serves the greater good.</p>
+              <Link href="/about" className="mt-8 inline-flex items-center gap-1.5 border-b border-ink/30 pb-0.5 text-body text-ink transition-colors duration-200 hover:border-ink focus-visible:ring-2 focus-visible:ring-orange/50 outline-none">
+                Learn more<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 4l4 4-4 4" /></svg>
+              </Link>
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80" alt="" className="h-full w-full object-cover transition-transform duration-300 hover:scale-105" loading="lazy" />
+            </div>
           </div>
         </AnimatedChild>
       </div>
@@ -239,26 +182,52 @@ function BrandsSection() {
     <section className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <AnimatedChild index={0}>
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="text-mono-label text-muted mb-4">Our Group</p>
-            <h2 className="text-section-heading text-primary">Our Companies</h2>
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-section-heading text-primary">Our companies</h2>
             <p className="mt-4 text-body-large text-body-muted">Five brands, one shared purpose</p>
           </div>
         </AnimatedChild>
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {brands.map((brand, i) => (
             <AnimatedChild key={brand.name} index={i + 1}>
-              <a href={brand.href} target="_blank" rel="noopener noreferrer" className="group flex h-full flex-col overflow-hidden rounded-sm border border-card-border bg-white transition-all duration-75 hover:border-hairline focus-visible:ring-2 focus-visible:ring-focus-blue outline-none">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={brand.image} alt={brand.name} className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-105" loading="lazy" />
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <span className="inline-block self-start rounded-full border border-hairline px-3 py-1 text-micro text-muted uppercase tracking-wider">{brand.tag}</span>
-                  <h3 className="mt-3 text-card-heading text-primary">{brand.name}</h3>
-                  <p className="mt-2 flex-1 text-body text-body-muted">{brand.description}</p>
-                  <span className="mt-4 inline-flex items-center self-start border-b border-ink/30 py-0.5 text-button text-ink transition-colors duration-75 group-hover:border-ink">Visit site</span>
-                </div>
+              <a href={brand.href} target="_blank" rel="noopener noreferrer" className="group flex h-full flex-col rounded-2xl border border-hairline/60 bg-white p-8 transition-all duration-200 hover:border-orange/30 hover:shadow-sm hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-orange/50 outline-none">
+                <span className="inline-block self-start rounded-full border border-hairline px-3 py-1 text-micro text-muted uppercase tracking-wider">{brand.tag}</span>
+                <h3 className="mt-4 text-card-heading text-primary group-hover:text-orange transition-colors duration-200">{brand.name}</h3>
+                <p className="mt-3 flex-1 text-body text-body-muted leading-relaxed">{brand.description}</p>
+                <span className="mt-6 inline-flex items-center gap-1.5 text-button text-orange transition-all duration-200 group-hover:gap-2.5">
+                  Visit site<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 4l4 4-4 4" /></svg>
+                </span>
               </a>
+            </AnimatedChild>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TimelineSection() {
+  return (
+    <section className="bg-soft-stone py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <AnimatedChild index={0}>
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-section-heading text-primary">Since 1908</h2>
+            <p className="mt-4 text-body-large text-body-muted">A century of engineering excellence</p>
+          </div>
+        </AnimatedChild>
+        <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {timeline.map((item, i) => (
+            <AnimatedChild key={item.year} index={i + 1}>
+              <div className="h-full rounded-2xl border border-hairline/40 bg-white p-6 transition-all duration-200 hover:border-orange/20 hover:shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary text-white text-sm font-semibold tracking-tight">{item.year}</div>
+                  <div className="min-w-0">
+                    <p className="font-medium text-ink">{item.title}</p>
+                    <p className="mt-0.5 text-caption text-muted">{item.description}</p>
+                  </div>
+                </div>
+              </div>
             </AnimatedChild>
           ))}
         </div>
@@ -269,39 +238,14 @@ function BrandsSection() {
 
 function ThinkBeyondSection() {
   return (
-    <section className="bg-soft-stone py-24 sm:py-32">
+    <section className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <AnimatedChild index={0}>
-          <p className="text-mono-label text-muted mb-4">Our Philosophy</p>
-          <h2 className="text-section-display text-primary">Think</h2>
-        </AnimatedChild>
-        <div className="mt-12 space-y-20">
-          {quotes.map((quote, i) => (
-            <AnimatedChild key={i} index={i + 1}>
-              <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-                {i % 2 === 0 ? (
-                  <>
-                    <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
-                      <img src={quote.image} alt="" className="h-full w-full object-cover transition-transform duration-200 hover:scale-105" loading="lazy" />
-                    </div>
-                    <div><p className="text-section-heading text-primary leading-tight">&ldquo;{quote.text}&rdquo;</p></div>
-                  </>
-                ) : (
-                  <>
-                    <div className="order-2 lg:order-1"><p className="text-section-heading text-primary leading-tight">&ldquo;{quote.text}&rdquo;</p></div>
-                    <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] order-1 lg:order-2">
-                      <img src={quote.image} alt="" className="h-full w-full object-cover transition-transform duration-200 hover:scale-105" loading="lazy" />
-                    </div>
-                  </>
-                )}
-              </div>
-            </AnimatedChild>
-          ))}
-        </div>
-        <AnimatedChild index={quotes.length + 1}>
-          <div className="mt-24">
-            <h2 className="text-section-display text-primary">Beyond</h2>
-            <p className="mt-6 max-w-2xl text-body-large text-body-muted leading-relaxed">Think Beyond is not just our tagline. It is our approach - to see further, question deeper, and build solutions that truly make a difference for people and the planet.</p>
+          <div className="mx-auto max-w-2xl space-y-6 text-body-large text-body-muted leading-relaxed">
+            <p>Since 1908, we have believed that great engineering is not just about calculations and blueprints. It is about seeing what others overlook and asking the questions nobody else thinks to ask.</p>
+            <p>To think beyond is to imagine a bridge where others see a river. To design a power station that works with nature, not against it. To build cities that serve both the people who live in them today and the generations who will inherit them tomorrow.</p>
+            <p>This is not a slogan on a wall. It is the thread that runs through every project we undertake, from the fjords of Norway to the hills of Nepal.</p>
+            <p>We invite you to think beyond with us.</p>
           </div>
         </AnimatedChild>
       </div>
@@ -311,18 +255,19 @@ function ThinkBeyondSection() {
 
 function InvestorRelations() {
   return (
-    <section className="py-24 sm:py-32">
+    <section className="bg-primary py-24 sm:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <AnimatedChild index={0}>
-            <p className="text-mono-label text-muted mb-4">Investors</p>
-            <h2 className="text-section-heading text-primary">Investor Relations</h2>
-            <p className="mt-6 text-body-large text-body-muted leading-relaxed">We maintain an open and transparent dialogue with our shareholders and the investment community. Listed on the Oslo Stock Exchange since 2015, we are committed to delivering long-term value through sustainable growth and operational excellence.</p>
-            <Link href="/investor-relations" className="mt-8 inline-flex items-center rounded-full bg-primary px-6 py-3 text-button text-white transition-all duration-75 hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-focus-blue outline-none">Visit Investor Relations</Link>
+            <h2 className="text-section-heading text-white">Investor Relations</h2>
+            <p className="mt-6 text-body-large text-white/60 leading-relaxed">Listed on the Oslo Stock Exchange since 2015, we maintain an open dialogue with our shareholders, committed to delivering long-term value through sustainable growth.</p>
+            <Link href="/investor-relations" className="mt-8 inline-flex items-center gap-1.5 rounded-full bg-orange px-7 py-3.5 text-button text-white transition-all duration-200 hover:bg-orange/90 hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-orange/50 outline-none shadow-sm">
+              Visit Investor Relations<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 4l4 4-4 4" /></svg>
+            </Link>
           </AnimatedChild>
           <AnimatedChild index={1}>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
-              <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=800&q=80" alt="" className="h-full w-full object-cover" loading="lazy" />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=800&q=80" alt="" className="h-full w-full object-cover transition-transform duration-300 hover:scale-105" loading="lazy" />
             </div>
           </AnimatedChild>
         </div>
@@ -333,19 +278,36 @@ function InvestorRelations() {
 
 function ClosingCta() {
   return (
-    <section className="bg-primary py-24 sm:py-32">
+    <section className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
         <AnimatedChild index={0}>
-          <h2 className="text-section-heading text-white">Let&apos;s build the future together</h2>
-          <p className="mx-auto mt-6 max-w-xl text-body-large text-white/70">Ready to start your next project? Get in touch with our team.</p>
+          <h2 className="text-section-heading text-primary">Let&apos;s build the future together</h2>
+          <p className="mx-auto mt-6 max-w-lg text-body-large text-body-muted">Ready to start your next project? Get in touch with our team.</p>
         </AnimatedChild>
         <AnimatedChild index={1}>
           <div className="mt-10 flex items-center justify-center gap-4">
-            <Link href="/contact" className="inline-flex items-center rounded-full bg-white px-6 py-3 text-button text-primary transition-all duration-75 hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-white/50 outline-none">Contact Us</Link>
-            <Link href="/projects" className="inline-flex items-center border-b border-white/30 py-1 text-body text-white/80 transition-colors duration-75 hover:border-white focus-visible:ring-2 focus-visible:ring-white/50 outline-none">View Our Projects</Link>
+            <Link href="/contact" className="inline-flex items-center rounded-full bg-orange px-7 py-3.5 text-button text-white transition-all duration-200 hover:bg-orange/90 hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-orange/50 outline-none shadow-sm">Contact us</Link>
+            <Link href="/projects" className="inline-flex items-center border-b border-ink/30 pb-0.5 text-body text-body-muted transition-colors duration-200 hover:border-ink hover:text-ink focus-visible:ring-2 focus-visible:ring-orange/50 outline-none">View our projects</Link>
           </div>
         </AnimatedChild>
       </div>
     </section>
+  );
+}
+
+export default function Home() {
+  return (
+    <>
+      <Hero />
+      <AnimatedSection><TrustLogos /></AnimatedSection>
+      <AnimatedSection><StatsSection /></AnimatedSection>
+      <AnimatedSection><ServicesSection /></AnimatedSection>
+      <AnimatedSection><AboutBlock /></AnimatedSection>
+      <AnimatedSection><BrandsSection /></AnimatedSection>
+      <AnimatedSection><TimelineSection /></AnimatedSection>
+      <AnimatedSection><ThinkBeyondSection /></AnimatedSection>
+      <AnimatedSection><InvestorRelations /></AnimatedSection>
+      <AnimatedSection><ClosingCta /></AnimatedSection>
+    </>
   );
 }

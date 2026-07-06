@@ -3,6 +3,10 @@
 import { createContext, useContext, useEffect, useRef, useState, ReactNode } from 'react';
 
 const EASE = 'cubic-bezier(0.16, 1, 0.3, 1)';
+
+const DURATION = 500;
+const STAGGER = 120;
+
 const VisCtx = createContext(false);
 
 export function AnimatedSection({
@@ -28,8 +32,8 @@ export function AnimatedSection({
       className={className}
       style={{
         opacity: show ? 1 : 0,
-        transform: show ? 'translateY(0)' : 'translateY(12px)',
-        transition: `opacity 100ms ${EASE} ${delay}ms, transform 100ms ${EASE} ${delay}ms`,
+        transform: show ? 'translateY(0)' : 'translateY(24px)',
+        transition: `opacity ${DURATION}ms ${EASE} ${delay}ms, transform ${DURATION}ms ${EASE} ${delay}ms`,
       }}
     >
       <VisCtx.Provider value={show}>{children}</VisCtx.Provider>
@@ -38,7 +42,7 @@ export function AnimatedSection({
 }
 
 export function AnimatedChild({
-  children, className, index = 0, staggerMs = 100,
+  children, className, index = 0, staggerMs = STAGGER,
 }: {
   children: ReactNode; className?: string; index?: number; staggerMs?: number;
 }) {
@@ -50,8 +54,8 @@ export function AnimatedChild({
       className={className}
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0)' : 'translateY(8px)',
-        transition: `opacity 100ms ${EASE} ${d}ms, transform 100ms ${EASE} ${d}ms`,
+        transform: visible ? 'translateY(0)' : 'translateY(16px)',
+        transition: `opacity ${DURATION}ms ${EASE} ${d}ms, transform ${DURATION}ms ${EASE} ${d}ms`,
       }}
     >
       {children}
