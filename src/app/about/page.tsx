@@ -157,6 +157,35 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Ashford Office Team */}
+      <section className="bg-canvas px-6 py-24 md:py-32">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-section-heading mb-4 text-primary">Ashford Office Team</h2>
+          <p className="text-body-large text-body-muted mb-16 max-w-2xl">The engineers and specialists driving our UK hydropower and renewable energy projects from Ashford, Kent.</p>
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { name: "Snorre Treimo", role: "Director, Multiconsult UK Ltd", desc: "Senior Vice President at Multiconsult, overseeing UK operations and international hydropower project delivery.", img: "https://ui-avatars.com/api/?name=Snorre+Treimo&background=003c33&color=fff&size=400" },
+              { name: "Patrick Hansson", role: "Principal Civil Engineer", desc: "Heavy civil construction specialist with deep expertise in hydropower, tunnels, and major infrastructure projects across Europe and South America.", img: "https://ui-avatars.com/api/?name=Patrick+Hansson&background=003c33&color=fff&size=400" },
+              { name: "Andrew Thick", role: "Chief Mechanical Engineer", desc: "Leads mechanical engineering for hydropower and renewable energy projects, based near Ashford with extensive UK and international experience.", img: "https://ui-avatars.com/api/?name=Andrew+Thick&background=003c33&color=fff&size=400" },
+              { name: "Gustavo Alfonzo", role: "Senior Mechanical Engineer", desc: "Specialises in hydraulic gates and mechanical equipment for hydroelectric projects, bringing multidisciplinary engineering expertise to the UK team.", img: "https://ui-avatars.com/api/?name=Gustavo+Alfonzo&background=003c33&color=fff&size=400" },
+              { name: "Chris Stubberfield", role: "Principal Civil Engineer", desc: "Chartered Civil Engineer (CEng, MICE) delivering civil engineering design and consultancy for hydropower schemes worldwide.", img: "https://ui-avatars.com/api/?name=Chris+Stubberfield&background=003c33&color=fff&size=400" },
+              { name: "Valentina Kosanović", role: "Senior Hydropower Engineer", desc: "Civil engineer specialising in hydropower, recently joined the Ashford team contributing to international water and energy infrastructure projects.", img: "https://ui-avatars.com/api/?name=Valentina+Kosanovi%C4%87&background=003c33&color=fff&size=400" },
+              { name: "Harshawardhan Patil", role: "Electrical Engineer", desc: "Power systems and renewable energy engineer focusing on feasibility studies, electrical design, and energy transition projects across the UK.", img: "https://ui-avatars.com/api/?name=Harshawardhan+Patil&background=003c33&color=fff&size=400" },
+              { name: "Heather Phillips", role: "Secretary", desc: "Provides essential administrative and organisational support to keep the Ashford office running efficiently.", img: "https://ui-avatars.com/api/?name=Heather+Phillips&background=003c33&color=fff&size=400" },
+            ].map((p) => (
+              <div key={p.name} className="text-center">
+                <div className="mx-auto mb-4 h-36 w-36 overflow-hidden rounded-full border-2 border-hairline">
+                  <img src={p.img} alt={p.name} loading="lazy" className="h-full w-full object-cover" />
+                </div>
+                <h3 className="text-feature-heading text-primary">{p.name}</h3>
+                <p className="text-body mt-1 font-medium text-deep-green">{p.role}</p>
+                <p className="text-body mt-2 text-body-muted leading-relaxed">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-deep-green px-6 py-24 text-center text-white md:py-32">
         <div className="mx-auto max-w-3xl">

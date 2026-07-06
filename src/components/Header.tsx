@@ -25,13 +25,14 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white`}
-      style={{ borderBottom: '1px solid #e5e7eb' }}
+      className={`sticky top-0 z-50 transition-all duration-150 ${
+        scrolled ? 'bg-white/95 backdrop-blur-sm border-b border-hairline' : 'bg-white'
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex-shrink-0">
-            <span className="text-xl font-semibold tracking-tight text-[#212121] font-sans">
+            <span className="text-xl font-semibold tracking-tight text-ink font-sans">
               Multiconsult
             </span>
           </Link>
@@ -41,7 +42,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-[#212121] hover:text-[#17171c] transition-colors"
+                className="text-caption font-medium text-ink hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-focus-blue outline-none rounded-sm"
               >
                 {link.label}
               </Link>
@@ -50,29 +51,9 @@ export default function Header() {
 
           <div className="flex items-center space-x-4">
             <button
-              aria-label="Search"
-              className="p-2 text-[#212121] hover:text-[#17171c] transition-colors"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"
-                />
-              </svg>
-            </button>
-
-            <button
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
-              className="lg:hidden p-2 text-[#212121] hover:text-[#17171c] transition-colors"
+              className="lg:hidden p-2 text-ink hover:text-primary transition-colors"
             >
               {mobileOpen ? (
                 <svg
@@ -111,14 +92,14 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-[#e5e7eb]">
+        <div className="lg:hidden bg-white border-t border-border-light animate-in slide-in-from-top-1">
           <div className="px-4 py-4 space-y-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="block px-3 py-2 text-sm font-medium text-[#212121] hover:bg-gray-50 rounded-md transition-colors"
+                className="block px-3 py-2 text-caption font-medium text-ink hover:bg-soft-stone rounded-xs transition-colors"
               >
                 {link.label}
               </Link>

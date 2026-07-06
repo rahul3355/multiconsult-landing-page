@@ -36,7 +36,7 @@ export default function CareersPage() {
         <div className="max-w-7xl mx-auto">
           <h1 className="text-hero-display mb-6">Careers at Multiconsult</h1>
           <p className="text-body-large text-body-muted max-w-2xl mb-8">
-            Join a team of 3,900+ engineers and architects shaping the future. Consistently ranked among Norway's most attractive employers.
+            Join a team of 3,900+ engineers and architects shaping the future. Consistently ranked among Norway&apos;s most attractive employers.
           </p>
         </div>
       </section>

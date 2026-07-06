@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const targets = [
   { label: "Profitability", value: "10% margin", description: "Operating margin target across the project portfolio." },
   { label: "Dividend policy", value: ">50%", description: "Of net profit distributed to shareholders annually." },

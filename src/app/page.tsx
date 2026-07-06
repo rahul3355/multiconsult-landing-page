@@ -2,39 +2,39 @@ import Link from "next/link";
 
 const services = [
   {
-    icon: "🏗️",
     title: "Buildings & Property",
     description:
       "Comprehensive engineering and architectural design for commercial, residential, and public buildings across all project phases.",
     href: "/services",
+    icon: "buildings",
   },
   {
-    icon: "🚄",
     title: "Mobility & Transport",
     description:
       "Integrated transport planning, road and rail design, bridge engineering, and sustainable mobility solutions.",
     href: "/services",
+    icon: "mobility",
   },
   {
-    icon: "⚡",
     title: "Energy & Industry",
     description:
       "Hydropower, renewable energy, offshore engineering, and industrial process solutions from concept through commissioning.",
     href: "/services",
+    icon: "energy",
   },
   {
-    icon: "💧",
     title: "Water & Environment",
     description:
       "Water supply, wastewater treatment, flood risk management, and comprehensive environmental assessments.",
     href: "/services",
+    icon: "water",
   },
   {
-    icon: "🔬",
     title: "Ground Investigations",
     description:
       "Geotechnical engineering, site investigations, and ground condition analysis for projects worldwide.",
     href: "/services",
+    icon: "ground",
   },
 ];
 
@@ -125,7 +125,7 @@ const brands = [
       "Specialist in site development, infrastructure and land development projects across Norway.",
     href: "https://www.sitepartner.no",
     image:
-      "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80",
   },
   {
     name: "Iterio",
@@ -161,13 +161,70 @@ const quotes = [
   },
 ];
 
+const trustLogos = [
+  "Statkraft",
+  "Equinor",
+  "Bane NOR",
+  "Nye Veier",
+  "Oslo Kommune",
+  "Jernbaneverket",
+];
+
+function ServiceIcon({ icon }: { icon: string }) {
+  switch (icon) {
+    case "buildings":
+      return (
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="4" y="12" width="8" height="16" />
+          <rect x="14" y="4" width="8" height="24" />
+          <rect x="24" y="8" width="4" height="20" />
+          <line x1="4" y1="28" x2="28" y2="28" />
+        </svg>
+      );
+    case "mobility":
+      return (
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="8" cy="24" r="3" />
+          <circle cx="24" cy="24" r="3" />
+          <path d="M5 24H3V12l4-4h10l4 4v12h-2" />
+          <path d="M17 12h4l3 4v4" />
+          <line x1="3" y1="16" x2="17" y2="16" />
+        </svg>
+      );
+    case "energy":
+      return (
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M18 2L8 18h8l-2 12 10-16h-8l2-12z" />
+        </svg>
+      );
+    case "water":
+      return (
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M16 4c0 0-8 8-8 14a8 8 0 0016 0c0-6-8-14-8-14z" />
+          <path d="M12 18a4 4 0 008 0" strokeWidth="1" />
+        </svg>
+      );
+    case "ground":
+      return (
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M4 24l8-16 6 10 6-8 4 14" />
+          <line x1="4" y1="28" x2="28" y2="28" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
+
 export default function Home() {
   return (
     <>
+      <AnnouncementBar />
       <Hero />
       <AboutBlock />
       <ServicesOverview />
       <StatsSection />
+      <TrustLogoStrip />
       <HistoryTimeline />
       <BrandsSection />
       <ThinkBeyondSection />
@@ -177,39 +234,56 @@ export default function Home() {
   );
 }
 
+function AnnouncementBar() {
+  return (
+    <div className="bg-cohere-black text-white">
+      <div className="mx-auto flex max-w-7xl items-center justify-center px-6 py-[9px]">
+        <p className="text-micro text-white/80">
+          Multiconsult ASA is listed on the Oslo Stock Exchange under ticker MULTI.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function Hero() {
   return (
-    <section className="relative overflow-hidden">
-      <div className="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1600&q=80"
-          alt=""
-          loading="lazy"
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-white/65" />
-      </div>
-      <div className="relative mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
-        <div className="text-center">
-          <h1 className="text-hero-display text-primary">Think Beyond.</h1>
-          <p className="mx-auto mt-6 max-w-2xl text-body-large text-body-muted">
-            We are Multiconsult - a specialist engineering and architecture
-            consultancy. Since 1908.
-          </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/services"
-              className="inline-flex items-center rounded-[32px] bg-white px-6 py-3 text-button text-primary transition-colors duration-150 hover:bg-white/90"
-            >
-              Explore Our Services
-            </Link>
-            <Link
-              href="/projects"
-              className="inline-flex items-center border-b border-ink/30 py-1 text-body text-ink transition-colors duration-150 hover:border-ink"
-            >
-              Our Projects
-            </Link>
+    <section className="bg-canvas">
+      <div className="mx-auto grid min-h-[70vh] grid-cols-1 lg:grid-cols-2">
+        <div className="flex items-center px-6 py-24 sm:py-32 lg:px-12">
+          <div>
+            <p className="text-mono-label text-muted mb-4">Multiconsult Group</p>
+            <h1 className="text-hero-display text-primary">Think Beyond.</h1>
+            <p className="mt-6 max-w-xl text-body-large text-body-muted">
+              We are Multiconsult - a specialist engineering and architecture
+              consultancy. Since 1908.
+            </p>
+            <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row">
+              <Link
+                href="/services"
+                className="inline-flex items-center rounded-[32px] bg-primary px-6 py-3 text-button text-white transition-all duration-150 hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-primary/50 outline-none"
+              >
+                Explore Our Services
+              </Link>
+              <Link
+                href="/projects"
+                className="inline-flex items-center border-b border-primary/30 py-1 text-body text-body-muted transition-colors duration-150 hover:border-primary focus-visible:ring-2 focus-visible:ring-primary/50 outline-none"
+              >
+                Our Projects
+              </Link>
+            </div>
           </div>
+        </div>
+        <div className="relative min-h-[50vh] lg:min-h-full">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="h-full w-full object-cover"
+          >
+            <source src="/videos/hydroelectric-aerial.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </section>
@@ -221,6 +295,7 @@ function AboutBlock() {
     <section className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
+          <p className="text-mono-label text-muted mb-4">About</p>
           <h2 className="text-section-heading text-primary">
             A multidisciplinary approach
           </h2>
@@ -238,8 +313,8 @@ function AboutBlock() {
             great engineering and architecture serve the greater good.
           </p>
           <Link
-href="/about"
-              className="mt-8 inline-flex items-center border-b border-ink/30 py-1 text-body text-ink transition-colors duration-150 hover:border-ink"
+            href="/about"
+            className="mt-8 inline-flex items-center border-b border-ink/30 py-1 text-body text-ink transition-colors duration-150 hover:border-ink focus-visible:ring-2 focus-visible:ring-focus-blue outline-none"
           >
             Learn more about us
           </Link>
@@ -248,7 +323,6 @@ href="/about"
           <img
             src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80"
             alt="Construction site with engineering plans"
-            loading="lazy"
             className="h-full w-full object-cover"
           />
         </div>
@@ -262,6 +336,7 @@ function ServicesOverview() {
     <section className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
+          <p className="text-mono-label text-muted mb-4">What We Do</p>
           <h2 className="text-section-heading text-primary">Our Services</h2>
           <p className="mt-4 text-body-large text-body-muted">
             End-to-end expertise across the full project lifecycle
@@ -273,7 +348,9 @@ function ServicesOverview() {
               key={service.title}
               className="rounded-sm bg-soft-stone p-8 transition-all duration-150 hover:bg-soft-stone/80 hover:-translate-y-0.5"
             >
-              <span className="text-3xl">{service.icon}</span>
+              <div className="text-primary">
+                <ServiceIcon icon={service.icon} />
+              </div>
               <h3 className="mt-4 text-card-heading text-primary">
                 {service.title}
               </h3>
@@ -282,7 +359,7 @@ function ServicesOverview() {
               </p>
               <Link
                 href={service.href}
-                className="mt-4 inline-flex items-center border-b border-ink/30 py-0.5 text-button text-ink transition-colors duration-150 hover:border-ink"
+                className="mt-4 inline-flex items-center border-b border-ink/30 py-0.5 text-button text-ink transition-colors duration-150 hover:border-ink focus-visible:ring-2 focus-visible:ring-focus-blue outline-none"
               >
                 Learn more
               </Link>
@@ -304,10 +381,32 @@ function StatsSection() {
               <p className="text-product-display text-primary">
                 {stat.number}
               </p>
-              <p className="mt-2 text-caption text-muted uppercase tracking-wider">
+              <p className="text-mono-label text-muted mt-2">
                 {stat.label}
               </p>
             </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TrustLogoStrip() {
+  return (
+    <section className="py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <p className="text-caption text-muted text-center mb-10">
+          Trusted by leading Norwegian enterprises
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+          {trustLogos.map((name) => (
+            <span
+              key={name}
+              className="text-feature-heading text-muted/40 font-medium tracking-tight"
+            >
+              {name}
+            </span>
           ))}
         </div>
       </div>
@@ -319,6 +418,7 @@ function HistoryTimeline() {
   return (
     <section className="bg-soft-stone py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <p className="text-mono-label text-muted mb-4">Our History</p>
         <h2 className="text-section-display text-primary">Past</h2>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {timeline.map((item) => (
@@ -328,10 +428,9 @@ function HistoryTimeline() {
             >
               <div className="flex items-start gap-4">
                 <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-xs">
-                    <img
+                  <img
                     src={item.image}
                     alt=""
-                    loading="lazy"
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -368,6 +467,7 @@ function BrandsSection() {
     <section className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
+          <p className="text-mono-label text-muted mb-4">Our Group</p>
           <h2 className="text-section-heading text-primary">Our Companies</h2>
           <p className="mt-4 text-body-large text-body-muted">
             Five brands, one shared purpose
@@ -380,13 +480,12 @@ function BrandsSection() {
               href={brand.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group overflow-hidden rounded-sm border border-card-border bg-white transition-all duration-150 hover:border-hairline"
+              className="group overflow-hidden rounded-sm border border-card-border bg-white transition-all duration-150 hover:border-hairline focus-visible:ring-2 focus-visible:ring-focus-blue outline-none"
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={brand.image}
                   alt={brand.name}
-                  loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-150 group-hover:scale-105"
                 />
               </div>
@@ -416,6 +515,7 @@ function ThinkBeyondSection() {
   return (
     <section className="bg-soft-stone py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <p className="text-mono-label text-muted mb-4">Our Philosophy</p>
         <h2 className="text-section-display text-primary">Think</h2>
         <div className="mt-12 space-y-20">
           {quotes.map((quote, i) => (
@@ -429,7 +529,6 @@ function ThinkBeyondSection() {
                     <img
                       src={quote.image}
                       alt=""
-                      loading="lazy"
                       className="h-full w-full object-cover"
                     />
                   </div>
@@ -450,7 +549,6 @@ function ThinkBeyondSection() {
                     <img
                       src={quote.image}
                       alt=""
-                      loading="lazy"
                       className="h-full w-full object-cover"
                     />
                   </div>
@@ -478,6 +576,7 @@ function InvestorRelations() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
+            <p className="text-mono-label text-muted mb-4">Investors</p>
             <h2 className="text-section-heading text-primary">
               Investor Relations
             </h2>
@@ -489,7 +588,7 @@ function InvestorRelations() {
             </p>
             <Link
               href="/investor-relations"
-              className="mt-8 inline-flex items-center rounded-[32px] bg-primary px-6 py-3 text-button text-white transition-colors duration-150 hover:bg-primary/90"
+              className="mt-8 inline-flex items-center rounded-[32px] bg-primary px-6 py-3 text-button text-white transition-colors duration-150 hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-focus-blue outline-none"
             >
               Visit Investor Relations
             </Link>
@@ -498,7 +597,6 @@ function InvestorRelations() {
             <img
               src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=800&q=80"
               alt="Oslo business district"
-              loading="lazy"
               className="h-full w-full object-cover"
             />
           </div>
@@ -521,9 +619,15 @@ function ClosingCta() {
         <div className="mt-10 flex items-center justify-center gap-4">
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-[32px] bg-white px-6 py-3 text-button text-primary transition-colors duration-150 hover:bg-white/90"
+            className="inline-flex items-center rounded-[32px] bg-white px-6 py-3 text-button text-primary transition-colors duration-150 hover:bg-white/90 focus-visible:ring-2 focus-visible:ring-white/50 outline-none"
           >
             Contact Us
+          </Link>
+          <Link
+            href="/projects"
+            className="inline-flex items-center border-b border-white/30 py-1 text-body text-white/80 transition-colors duration-150 hover:border-white focus-visible:ring-2 focus-visible:ring-white/50 outline-none"
+          >
+            View Our Projects
           </Link>
         </div>
       </div>

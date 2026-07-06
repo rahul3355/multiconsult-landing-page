@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const offices = [
   { city: "Oslo", address: "Nedre Skøyen vei 2, 0276 Oslo", country: "Norway" },
   { city: "Ashford", address: "Connect 38, 1 Dover Place, Ashford, TN23 1FB", country: "United Kingdom" },
@@ -20,7 +18,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto">
           <h1 className="text-hero-display mb-6">Contact Us</h1>
           <p className="text-body-large text-body-muted max-w-2xl">
-            Get in touch with our team. We'd love to hear from you.
+            Get in touch with our team. We&apos;d love to hear from you.
           </p>
         </div>
       </section>
