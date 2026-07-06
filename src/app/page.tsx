@@ -147,10 +147,10 @@ function ServicesOverview() {
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <AnimatedChild key={s.title} index={i + 1}>
-              <div className="rounded-sm bg-soft-stone p-8 transition-all duration-75 hover:bg-soft-stone/80 hover:-translate-y-0.5">
+              <div className="flex h-full flex-col rounded-sm bg-soft-stone p-8 transition-all duration-75 hover:bg-soft-stone/80 hover:-translate-y-0.5">
                 <div className="text-primary"><ServiceIcon icon={s.icon} /></div>
                 <h3 className="mt-4 text-card-heading text-primary">{s.title}</h3>
-                <p className="mt-3 text-body text-body-muted">{s.description}</p>
+                <p className="mt-3 flex-1 text-body text-body-muted">{s.description}</p>
                 <Link href={s.href} className="mt-4 inline-flex items-center border-b border-ink/30 py-0.5 text-button text-ink transition-colors duration-75 hover:border-ink focus-visible:ring-2 focus-visible:ring-focus-blue outline-none">Learn more</Link>
               </div>
             </AnimatedChild>
@@ -208,7 +208,7 @@ function HistoryTimeline() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {timeline.map((item, i) => (
             <AnimatedChild key={item.year} index={i + 1}>
-              <div className="rounded-sm bg-white p-6 transition-all duration-75 hover:bg-white/80">
+              <div className="h-full rounded-sm bg-white p-6 transition-all duration-75 hover:bg-white/80">
                 <div className="flex items-start gap-4">
                   <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-xs">
                     <img src={item.image} alt="" className="h-full w-full object-cover transition-transform duration-200 hover:scale-110" loading="lazy" />
@@ -248,15 +248,15 @@ function BrandsSection() {
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {brands.map((brand, i) => (
             <AnimatedChild key={brand.name} index={i + 1}>
-              <a href={brand.href} target="_blank" rel="noopener noreferrer" className="group block overflow-hidden rounded-sm border border-card-border bg-white transition-all duration-75 hover:border-hairline focus-visible:ring-2 focus-visible:ring-focus-blue outline-none">
+              <a href={brand.href} target="_blank" rel="noopener noreferrer" className="group flex h-full flex-col overflow-hidden rounded-sm border border-card-border bg-white transition-all duration-75 hover:border-hairline focus-visible:ring-2 focus-visible:ring-focus-blue outline-none">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img src={brand.image} alt={brand.name} className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-105" loading="lazy" />
                 </div>
-                <div className="p-6">
-                  <span className="inline-block rounded-full border border-hairline px-3 py-1 text-micro text-muted uppercase tracking-wider">{brand.tag}</span>
+                <div className="flex flex-1 flex-col p-6">
+                  <span className="inline-block self-start rounded-full border border-hairline px-3 py-1 text-micro text-muted uppercase tracking-wider">{brand.tag}</span>
                   <h3 className="mt-3 text-card-heading text-primary">{brand.name}</h3>
-                  <p className="mt-2 text-body text-body-muted">{brand.description}</p>
-                  <span className="mt-4 inline-flex items-center border-b border-ink/30 py-0.5 text-button text-ink transition-colors duration-75 group-hover:border-ink">Visit site</span>
+                  <p className="mt-2 flex-1 text-body text-body-muted">{brand.description}</p>
+                  <span className="mt-4 inline-flex items-center self-start border-b border-ink/30 py-0.5 text-button text-ink transition-colors duration-75 group-hover:border-ink">Visit site</span>
                 </div>
               </a>
             </AnimatedChild>
