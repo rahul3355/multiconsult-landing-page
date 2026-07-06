@@ -26,15 +26,6 @@ const services = [
   },
 ];
 
-const trustLogos = [
-  { name: "Statkraft", initials: "S", label: "Statkraft" },
-  { name: "Equinor", initials: "E", label: "Equinor" },
-  { name: "Bane NOR", initials: "BN", label: "Bane NOR" },
-  { name: "Nye Veier", initials: "NV", label: "Nye Veier" },
-  { name: "Oslo Kommune", initials: "OK", label: "Oslo Kommune" },
-  { name: "Jernbaneverket", initials: "JBV", label: "Jernbaneverket" },
-];
-
 const timeline = [
   { year: "1908", title: "The story begins", description: "Norsk Vandbygningskontor established" },
   { year: "1974", title: "Multiconsult name", description: "The company takes on the name Multiconsult" },
@@ -51,16 +42,6 @@ const brands = [
   { name: "Sitepartner", tag: "Site Development", description: "Specialist in site development and infrastructure projects across Norway.", href: "https://www.sitepartner.no" },
   { name: "Iterio", tag: "Urban Planning", description: "Urban planning and traffic engineering for sustainable mobility.", href: "https://www.iterio.se" },
 ];
-
-function LogoMark({ name, initials, label }: { name: string; initials: string; label: string }) {
-  return (
-    <svg viewBox={`0 0 ${Math.max(130, label.length * 14)} 44`} fill="none" className="h-11 w-auto opacity-45 hover:opacity-70 transition-opacity duration-300">
-      <rect x="0" y="4" width="36" height="36" rx="8" fill="#17171c" />
-      <text x="18" y="28" textAnchor="middle" fill="white" fontSize={initials.length > 1 ? 13 : 17} fontWeight="600" fontFamily="Inter, sans-serif">{initials}</text>
-      <text x="46" y="28" fill="#17171c" fontSize="15" fontWeight="500" fontFamily="Inter, sans-serif" letterSpacing="-0.3">{label}</text>
-    </svg>
-  );
-}
 
 function Hero() {
   return (
@@ -81,23 +62,6 @@ function Hero() {
             <Link href="/contact" className="inline-flex items-center rounded-full bg-orange px-7 py-3.5 text-button text-white transition-all duration-200 hover:bg-orange/90 hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-orange/50 outline-none shadow-sm">Get in touch</Link>
             <Link href="/projects" className="inline-flex items-center border-b border-ink/30 pb-0.5 text-body text-body-muted transition-colors duration-200 hover:border-ink hover:text-ink focus-visible:ring-2 focus-visible:ring-orange/50 outline-none">View our projects</Link>
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function TrustLogos() {
-  return (
-    <section className="py-20 sm:py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <AnimatedChild index={0}><p className="text-caption text-muted text-center mb-12">Trusted by leading Norwegian enterprises</p></AnimatedChild>
-        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-8">
-          {trustLogos.map((logo, i) => (
-            <AnimatedChild key={logo.name} index={i + 1}>
-              <LogoMark name={logo.name} initials={logo.initials} label={logo.label} />
-            </AnimatedChild>
-          ))}
         </div>
       </div>
     </section>
@@ -299,7 +263,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <AnimatedSection><TrustLogos /></AnimatedSection>
       <AnimatedSection><StatsSection /></AnimatedSection>
       <AnimatedSection><ServicesSection /></AnimatedSection>
       <AnimatedSection><AboutBlock /></AnimatedSection>
