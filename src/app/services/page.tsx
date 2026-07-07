@@ -26,11 +26,11 @@ export default function ServicesPage() {
       {services.map((s, i) => (
         <AnimatedSection key={s.title}>
           <section className={`relative px-6 py-24 md:py-32 overflow-hidden ${i % 2 === 1 ? "bg-soft-stone" : "bg-canvas"}`}>
-            <div className={`relative mx-auto flex max-w-6xl flex-col items-center gap-12 md:flex-row md:gap-16 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
-              <AnimatedChild index={0}>
-                <div className={`w-full md:w-1/2 ${i % 2 === 1 ? "md:pl-8" : "md:pr-8"}`}>
-                  <div className="overflow-hidden rounded-2xl">
-                    <img src={s.img} alt={s.title} loading="lazy" className="w-full aspect-[4/3] object-contain bg-soft-stone/50 transition-transform duration-200 hover:scale-105" />
+            <div className={`relative mx-auto flex max-w-6xl flex-col items-stretch gap-12 md:flex-row md:gap-16 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
+              <AnimatedChild index={0} className="flex md:w-1/2">
+                <div className={`flex flex-1 ${i % 2 === 1 ? "md:pl-8" : "md:pr-8"}`}>
+                  <div className="flex-1 overflow-hidden rounded-2xl">
+                    <img src={s.img} alt={s.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-200 hover:scale-105" />
                   </div>
                 </div>
               </AnimatedChild>
