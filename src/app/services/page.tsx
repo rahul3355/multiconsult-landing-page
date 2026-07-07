@@ -30,7 +30,7 @@ export default function ServicesPage() {
               <AnimatedChild index={0}>
                 <div className={`w-full md:w-1/2 ${i % 2 === 1 ? "md:pl-8" : "md:pr-8"}`}>
                   <div className="overflow-hidden rounded-2xl">
-                    <img src={s.img} alt={s.title} loading="lazy" className="h-80 w-full object-cover md:h-96 transition-transform duration-200 hover:scale-105" />
+                    <img src={s.img} alt={s.title} loading="lazy" className="w-full aspect-[4/3] object-contain bg-soft-stone/50 transition-transform duration-200 hover:scale-105" />
                   </div>
                 </div>
               </AnimatedChild>
