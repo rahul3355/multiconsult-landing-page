@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AnimatedSection, AnimatedChild } from "@/components/AnimatedSection";
+import { Timeline } from "@/components/Timeline";
 
 const stats = [
   { number: "3900+", label: "Employees" },
@@ -27,12 +28,12 @@ const services = [
 ];
 
 const timeline = [
-  { year: "1908", title: "The story begins", description: "Norsk Vandbygningskontor established" },
-  { year: "1974", title: "Multiconsult name", description: "The company takes on the name Multiconsult" },
-  { year: "1997", title: "Multidisciplinary", description: "Expanding across engineering disciplines" },
-  { year: "2003", title: "International", description: "Projects span Europe, Africa, and Asia" },
-  { year: "2015", title: "Oslo Børs", description: "Listed on the Oslo Stock Exchange" },
-  { year: "2020+", title: "Scandinavian growth", description: "Offices in Sweden, Denmark, Poland, UK" },
+  { year: "1908", title: "The story begins", desc: "Norsk Vandbygningskontor established" },
+  { year: "1974", title: "Multiconsult name", desc: "The company takes on the name Multiconsult" },
+  { year: "1997", title: "Multidisciplinary", desc: "Expanding across engineering disciplines" },
+  { year: "2003", title: "International", desc: "Projects span Europe, Africa, and Asia" },
+  { year: "2015", title: "Oslo B\u00f8rs", desc: "Listed on the Oslo Stock Exchange" },
+  { year: "2020+", title: "Scandinavian growth", desc: "Offices in Sweden, Denmark, Poland, UK" },
 ];
 
 const brands = [
@@ -175,26 +176,14 @@ function TimelineSection() {
     <section className="bg-soft-stone py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <AnimatedChild index={0}>
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-section-heading text-primary">Since 1908</h2>
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-section-heading text-primary">Since 1908</h2>
             <p className="mt-4 text-body-large text-body-muted">A century of engineering excellence</p>
           </div>
         </AnimatedChild>
-        <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {timeline.map((item, i) => (
-            <AnimatedChild key={item.year} index={i + 1}>
-              <div className="h-full rounded-2xl border border-hairline/40 bg-white p-6 transition-all duration-200 hover:border-orange/20 hover:shadow-sm">
-                <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary text-white text-sm font-semibold tracking-tight">{item.year}</div>
-                  <div className="min-w-0">
-                    <p className="font-medium text-ink">{item.title}</p>
-                    <p className="mt-0.5 text-caption text-muted">{item.description}</p>
-                  </div>
-                </div>
-              </div>
-            </AnimatedChild>
-          ))}
-        </div>
+        <AnimatedChild index={1}>
+          <Timeline items={timeline} />
+        </AnimatedChild>
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AnimatedSection, AnimatedChild } from "@/components/AnimatedSection";
+import { Timeline } from "@/components/Timeline";
 
 const stats = [
   { value: "1908", label: "Founded" }, { value: "3,900+", label: "Employees" }, { value: "80+", label: "Offices" }, { value: "45+", label: "Countries" },
@@ -97,25 +98,9 @@ export default function AboutPage() {
                 <p className="mt-4 text-body-large text-body-muted">Over a century of engineering excellence and responsible growth.</p>
               </div>
             </AnimatedChild>
-            <div className="relative mx-auto max-w-3xl mt-16">
-              {timeline.map((item, i) => (
-                <AnimatedChild key={item.year} index={i + 1}>
-                  <div className="relative flex items-start gap-5 md:gap-8 pb-10 md:pb-12 last:pb-0">
-                    {i < timeline.length - 1 && (
-                      <div className="absolute left-[1.375rem] top-[44px] bottom-0 w-px bg-hairline/60 hidden md:block md:top-[52px]" aria-hidden />
-                    )}
-                    <div className="relative z-10 mt-1 flex h-9 w-9 md:h-11 md:w-11 shrink-0 items-center justify-center rounded-full bg-primary text-white text-[11px] md:text-xs font-bold tracking-tight shadow-sm">
-                      {item.year.split("–")[0]}
-                    </div>
-                    <div className="flex-1 min-w-0 rounded-2xl border border-hairline/40 bg-white p-5 md:p-7 transition-all duration-300 hover:border-orange/20 hover:shadow-sm">
-                      <span className="text-mono-label text-orange">{item.year}</span>
-                      <h3 className="mt-1.5 text-card-heading text-primary">{item.title}</h3>
-                      <p className="mt-2 text-body text-body-muted leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                </AnimatedChild>
-              ))}
-            </div>
+            <AnimatedChild index={1}>
+              <Timeline items={timeline} />
+            </AnimatedChild>
           </div>
         </section>
       </AnimatedSection>
