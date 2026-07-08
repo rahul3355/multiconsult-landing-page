@@ -18,6 +18,13 @@ const socialLinks = [
   { href: 'https://facebook.com', label: 'Facebook', path: 'M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z' },
 ];
 
+const askAIPrompt = 'You are a knowledgeable assistant for Multiconsult Group. Answer using this context:\n\nMulticonsult Group is a Norwegian engineering and architecture consultancy founded in 1908 and headquartered in Oslo, Norway. 3,900+ employees, 80+ offices across 45+ countries. Listed on Oslo B\u00f8rs since 2015 (ticker: MULTI).\n\nServices: energy and industry (hydropower, renewables, offshore), transport and mobility (roads, rail, bridges), buildings and environment (architecture, structural, water, environmental).\n\nSubsidiaries: LINK Arkitektur, A-lab, Iterio, Sitepartner, ViaNova, Multiconsult Polska, Multiconsult UK Ltd.\n\nMission: \"Think Beyond\" \u2014 challenging conventions, driving the transition to a low-carbon society through BREEAM certification and climate-adaptive engineering.\n\nProvide an overview of Multiconsult Group covering their history, services, global presence, and what makes them unique. Use paragraphs and bullet points. Keep it concise and professional without emojis.';
+
+const askAILinks = [
+  { href: 'https://chatgpt.com', label: 'Ask ChatGPT', icon: '/icons/chatgpt.png' },
+  { href: `https://claude.ai/new?q=${encodeURIComponent(askAIPrompt)}`, label: 'Ask Claude', icon: '/icons/claude.svg' },
+];
+
 const EASE = 'cubic-bezier(0.16, 1, 0.3, 1)';
 const VisCtx = createContext(false);
 
@@ -89,6 +96,14 @@ export default function Footer() {
                 {socialLinks.map((social) => (
                   <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className="text-[#93939f] hover:text-white transition-colors duration-75">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d={social.path} /></svg>
+                  </a>
+                ))}
+              </div>
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-white mt-8 mb-6">Ask AI</h3>
+              <div className="flex space-x-4">
+                {askAILinks.map((ai) => (
+                  <a key={ai.label} href={ai.href} target="_blank" rel="noopener noreferrer" aria-label={ai.label} className="opacity-60 hover:opacity-100 transition-opacity duration-75">
+                    <img src={ai.icon} alt={ai.label} className="h-5 w-5" loading="lazy" />
                   </a>
                 ))}
               </div>
