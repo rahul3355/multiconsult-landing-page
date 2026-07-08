@@ -26,7 +26,7 @@ const values = [
 const leaders = [
   { name: "Karsten Warloe", role: "CEO", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" },
   { name: "Ove B. Haupberg", role: "CFO", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" },
-  { name: "Rikard Appelgren", role: "Chair", img: "https://images.unsplash.com/photo-1507511444994-3ba60e5b64c5?w=400&q=80" },
+  { name: "Rikard Appelgren", role: "Chair", img: "https://www.multiconsultgroup.com/globalassets/group/persons/the-board/board-director---rikard-appelgren---550x550px---foto_bard-gudim.jpg?width=400&height=400&quality=80" },
 ];
 
 const subsidiaries = [
@@ -97,20 +97,24 @@ export default function AboutPage() {
                 <p className="mt-4 text-body-large text-body-muted">Over a century of engineering excellence and responsible growth.</p>
               </div>
             </AnimatedChild>
-            <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {timeline.map((item, i) => (
-                <AnimatedChild key={item.year} index={i + 1}>
-                  <div className="h-full rounded-2xl border border-hairline/40 bg-white p-6 transition-all duration-200 hover:border-orange/20 hover:shadow-sm">
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary text-white text-sm font-semibold tracking-tight">{item.year}</div>
-                      <div className="min-w-0">
-                        <p className="font-medium text-ink">{item.title}</p>
-                        <p className="mt-0.5 text-caption text-muted">{item.desc}</p>
+            <div className="relative mx-auto max-w-3xl mt-16">
+              <div className="absolute left-[1.375rem] top-2 bottom-2 w-px bg-hairline/60 hidden md:block" aria-hidden />
+              <div className="space-y-10 md:space-y-12">
+                {timeline.map((item, i) => (
+                  <AnimatedChild key={item.year} index={i + 1}>
+                    <div className="relative flex items-start gap-5 md:gap-8">
+                      <div className="relative z-10 mt-1 flex h-9 w-9 md:h-11 md:w-11 shrink-0 items-center justify-center rounded-full bg-primary text-white text-[11px] md:text-xs font-bold tracking-tight shadow-sm">
+                        {item.year.split("–")[0]}
+                      </div>
+                      <div className="flex-1 min-w-0 rounded-2xl border border-hairline/40 bg-white p-5 md:p-7 transition-all duration-300 hover:border-orange/20 hover:shadow-sm">
+                        <span className="text-mono-label text-orange">{item.year}</span>
+                        <h3 className="mt-1.5 text-card-heading text-primary">{item.title}</h3>
+                        <p className="mt-2 text-body text-body-muted leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
-                  </div>
-                </AnimatedChild>
-              ))}
+                  </AnimatedChild>
+                ))}
+              </div>
             </div>
           </div>
         </section>
