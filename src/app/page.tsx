@@ -171,9 +171,9 @@ function BrandsSection() {
   );
 }
 
-function TimelineSection() {
+function Since1908Section() {
   return (
-    <section className="bg-soft-stone py-24 sm:py-32">
+    <section className="bg-canvas py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <AnimatedChild index={0}>
           <div className="mx-auto max-w-2xl text-center">
@@ -184,18 +184,9 @@ function TimelineSection() {
         <AnimatedChild index={1}>
           <Timeline items={timeline} />
         </AnimatedChild>
-      </div>
-    </section>
-  );
-}
-
-function ThinkBeyondSection() {
-  return (
-    <section className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <AnimatedChild index={0}>
-          <div className="mx-auto max-w-2xl space-y-6 text-body-large text-body-muted leading-relaxed">
-            <p>Since 1908, we have believed that great engineering is not just about calculations and blueprints. It is about seeing what others overlook and asking the questions nobody else thinks to ask.</p>
+        <AnimatedChild index={2}>
+          <div className="mx-auto mt-32 max-w-2xl space-y-6 text-body-large text-body-muted leading-relaxed">
+            <p>We have always believed that great engineering is not just about calculations and blueprints. It is about seeing what others overlook and asking the questions nobody else thinks to ask.</p>
             <p>To think beyond is to imagine a bridge where others see a river. To design a power station that works with nature, not against it. To build cities that serve both the people who live in them today and the generations who will inherit them tomorrow.</p>
             <p>This is not a slogan on a wall. It is the thread that runs through every project we undertake, from the fjords of Norway to the hills of Nepal.</p>
             <p>We invite you to think beyond with us.</p>
@@ -256,8 +247,7 @@ export default function Home() {
       <AnimatedSection><ServicesSection /></AnimatedSection>
       <AnimatedSection><AboutBlock /></AnimatedSection>
       <AnimatedSection><BrandsSection /></AnimatedSection>
-      <AnimatedSection><TimelineSection /></AnimatedSection>
-      <AnimatedSection><ThinkBeyondSection /></AnimatedSection>
+      <AnimatedSection><Since1908Section /></AnimatedSection>
       <AnimatedSection><InvestorRelations /></AnimatedSection>
       <AnimatedSection><ClosingCta /></AnimatedSection>
     </>

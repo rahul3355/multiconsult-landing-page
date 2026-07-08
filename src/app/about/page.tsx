@@ -198,7 +198,7 @@ export default function AboutPage() {
                     </div>
                     <h3 className="text-feature-heading text-primary">{p.name}</h3>
                     <p className="text-body mt-1 font-medium text-orange">{p.role}</p>
-                    <p className="text-body mt-2 text-body-muted leading-relaxed">{p.desc}</p>
+                    <p className="mt-2 max-w-64 mx-auto text-caption text-body-muted leading-relaxed text-justify">{p.desc}</p>
                   </div>
                 </AnimatedChild>
               ))}
