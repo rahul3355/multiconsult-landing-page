@@ -59,7 +59,7 @@ function Hero() {
           <h1 className="text-hero-display text-primary tracking-tight" style={{ animation: 'fade-in-up 600ms cubic-bezier(0.16, 1, 0.3, 1) 250ms both' }}>Think Beyond.</h1>
           <p className="mt-6 mx-auto max-w-lg text-body-large text-body-muted leading-relaxed" style={{ animation: 'fade-in-up 600ms cubic-bezier(0.16, 1, 0.3, 1) 400ms both' }}>Engineering & architecture for the built environment. Since 1908.</p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center" style={{ animation: 'fade-in-up 600ms cubic-bezier(0.16, 1, 0.3, 1) 550ms both' }}>
-            <Link href="/contact" className="inline-flex items-center rounded-full bg-orange px-7 py-3.5 text-button text-white transition-all duration-200 hover:bg-orange/90 hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-orange/50 outline-none shadow-sm">Get in touch</Link>
+            <Link href="/contact" className="inline-flex items-center rounded-full bg-orange px-7 py-3.5 text-button text-white transition-all duration-200 hover:bg-orange/90 border border-orange/20 hover:border-orange/50 focus-visible:ring-2 focus-visible:ring-orange/50 outline-none shadow-sm">Get in touch</Link>
             <Link href="/projects" className="inline-flex items-center border-b border-ink/30 pb-0.5 text-body text-body-muted transition-colors duration-200 hover:border-ink hover:text-ink focus-visible:ring-2 focus-visible:ring-orange/50 outline-none">View our projects</Link>
           </div>
         </div>
@@ -225,7 +225,7 @@ function InvestorRelations() {
           <AnimatedChild index={0}>
             <h2 className="text-section-heading text-white">Investor Relations</h2>
             <p className="mt-6 text-body-large text-white/60 leading-relaxed">Listed on the Oslo Stock Exchange since 2015, we maintain an open dialogue with our shareholders, committed to delivering long-term value through sustainable growth.</p>
-            <Link href="/investor-relations" className="mt-8 inline-flex items-center gap-1.5 rounded-full bg-orange px-7 py-3.5 text-button text-white transition-all duration-200 hover:bg-orange/90 hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-orange/50 outline-none shadow-sm">
+            <Link href="/investor-relations" className="mt-8 inline-flex items-center gap-1.5 rounded-full bg-orange px-7 py-3.5 text-button text-white transition-all duration-200 hover:bg-orange/90 border border-orange/20 hover:border-orange/50 focus-visible:ring-2 focus-visible:ring-orange/50 outline-none shadow-sm">
               Visit Investor Relations<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 4l4 4-4 4" /></svg>
             </Link>
           </AnimatedChild>
@@ -250,7 +250,7 @@ function ClosingCta() {
         </AnimatedChild>
         <AnimatedChild index={1}>
           <div className="mt-10 flex items-center justify-center gap-4">
-            <Link href="/contact" className="inline-flex items-center rounded-full bg-orange px-7 py-3.5 text-button text-white transition-all duration-200 hover:bg-orange/90 hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-orange/50 outline-none shadow-sm">Contact us</Link>
+            <Link href="/contact" className="inline-flex items-center rounded-full bg-orange px-7 py-3.5 text-button text-white transition-all duration-200 hover:bg-orange/90 border border-orange/20 hover:border-orange/50 focus-visible:ring-2 focus-visible:ring-orange/50 outline-none shadow-sm">Contact us</Link>
             <Link href="/projects" className="inline-flex items-center border-b border-ink/30 pb-0.5 text-body text-body-muted transition-colors duration-200 hover:border-ink hover:text-ink focus-visible:ring-2 focus-visible:ring-orange/50 outline-none">View our projects</Link>
           </div>
         </AnimatedChild>

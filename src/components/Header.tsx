@@ -65,7 +65,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <Link
               href="/contact"
-              className="hidden sm:inline-flex items-center rounded-full bg-orange px-5 py-2 text-caption font-medium text-white transition-all duration-200 hover:bg-orange/90 hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-orange/50 outline-none shadow-sm"
+              className="hidden sm:inline-flex items-center rounded-full bg-orange px-5 py-2 text-caption font-medium text-white transition-all duration-200 hover:bg-orange/90 border border-orange/20 hover:border-orange/50 focus-visible:ring-2 focus-visible:ring-orange/50 outline-none shadow-sm"
             >
               Get in touch
             </Link>

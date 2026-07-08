@@ -53,7 +53,7 @@ export default function ContactPage() {
                     <label htmlFor="message" className="text-micro uppercase tracking-widest text-muted font-medium">Message</label>
                     <textarea id="message" rows={5} className="w-full px-4 py-3 border border-hairline/80 rounded-xl text-body text-ink focus:outline-none focus:ring-2 focus:ring-orange/30 focus:border-orange/50 transition-all duration-200 resize-y" placeholder="Tell us about your project..." />
                   </div>
-                  <button type="submit" className="self-start inline-flex items-center gap-1.5 rounded-full bg-orange px-7 py-3.5 text-button text-white transition-all duration-200 hover:bg-orange/90 hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-orange/50 outline-none shadow-sm">
+                  <button type="submit" className="self-start inline-flex items-center gap-1.5 rounded-full bg-orange px-7 py-3.5 text-button text-white transition-all duration-200 hover:bg-orange/90 border border-orange/20 hover:border-orange/50 focus-visible:ring-2 focus-visible:ring-orange/50 outline-none shadow-sm">
                     Send message<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 4l4 4-4 4" /></svg>
                   </button>
                 </form>

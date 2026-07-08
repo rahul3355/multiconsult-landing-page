@@ -64,7 +64,7 @@ export default function ServicesPage() {
         <section className="bg-primary px-6 py-24 text-center sm:py-32">
           <div className="mx-auto max-w-3xl">
             <AnimatedChild index={0}><h2 className="text-section-heading text-white">Let&apos;s work together</h2><p className="mx-auto mt-6 max-w-lg text-body-large text-white/60">Have a project in mind? Our team of 3,900+ specialists is ready to help.</p></AnimatedChild>
-            <AnimatedChild index={1}><div className="mt-10"><Link href="/contact" className="inline-flex items-center gap-1.5 rounded-full bg-orange px-7 py-3.5 text-button text-white transition-all duration-200 hover:bg-orange/90 hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-orange/50 outline-none shadow-sm">Contact us<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 4l4 4-4 4" /></svg></Link></div></AnimatedChild>
+            <AnimatedChild index={1}><div className="mt-10"><Link href="/contact" className="inline-flex items-center gap-1.5 rounded-full bg-orange px-7 py-3.5 text-button text-white transition-all duration-200 hover:bg-orange/90 border border-orange/20 hover:border-orange/50 focus-visible:ring-2 focus-visible:ring-orange/50 outline-none shadow-sm">Contact us<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 4l4 4-4 4" /></svg></Link></div></AnimatedChild>
           </div>
         </section>
       </AnimatedSection>

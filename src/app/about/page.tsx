@@ -226,7 +226,7 @@ export default function AboutPage() {
           </AnimatedChild>
           <AnimatedChild index={1}>
             <div className="mt-10">
-              <Link href="/careers" className="inline-flex items-center rounded-full bg-orange px-7 py-3.5 text-button text-white transition-all duration-200 hover:bg-orange/90 hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-orange/50 outline-none shadow-sm">
+              <Link href="/careers" className="inline-flex items-center rounded-full bg-orange px-7 py-3.5 text-button text-white transition-all duration-200 hover:bg-orange/90 border border-orange/20 hover:border-orange/50 focus-visible:ring-2 focus-visible:ring-orange/50 outline-none shadow-sm">
                 View careers<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="ml-1.5"><path d="M6 4l4 4-4 4" /></svg>
               </Link>
             </div>
