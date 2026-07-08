@@ -40,7 +40,7 @@ const subsidiaries = [
 ];
 
 const team = [
-  { name: "Anders Gustav Pettersen", role: "Managing Director, Multiconsult UK Ltd", desc: "Managing Director with deep expertise in hydropower, renewable energy, and international project delivery.", img: "https://ui-avatars.com/api/?name=Anders+Gustav+Pettersen&background=e85d2c&color=fff&size=400" },
+  { name: "Anders Gustav Pettersen", role: "Managing Director", desc: "Managing Director with deep expertise in hydropower, renewable energy, and international project delivery.", img: "https://ui-avatars.com/api/?name=Anders+Gustav+Pettersen&background=e85d2c&color=fff&size=400" },
   { name: "Patrick Hansson", role: "Principal Civil Engineer", desc: "Heavy civil construction specialist with deep expertise in hydropower, tunnels, and major infrastructure projects.", img: "https://ui-avatars.com/api/?name=Patrick+Hansson&background=e85d2c&color=fff&size=400" },
   { name: "Andrew Thick", role: "Chief Mechanical Engineer", desc: "Leads mechanical engineering for hydropower and renewable energy projects.", img: "https://ui-avatars.com/api/?name=Andrew+Thick&background=e85d2c&color=fff&size=400" },
   { name: "Gustavo Alfonzo", role: "Senior Mechanical Engineer", desc: "Specialises in hydraulic gates and mechanical equipment for hydroelectric projects.", img: "https://ui-avatars.com/api/?name=Gustavo+Alfonzo&background=e85d2c&color=fff&size=400" },
